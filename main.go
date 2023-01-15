@@ -9,4 +9,9 @@ func foo() {
 func main() {
 	foo()
 	fmt.Println("hello, world")
+	bar()
+}
+
+func bar() {
+	fmt.Println("bar")
 }
