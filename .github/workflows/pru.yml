@@ -1,0 +1,22 @@
+name: pru
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**/*.go"
+      - Makefile
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  pru:
+    name: pru
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: winebarrel/pru-action@v0.3.0
+        with:
+          paths: |
+            **/*.go
+            Makefile
